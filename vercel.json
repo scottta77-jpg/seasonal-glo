@@ -1,0 +1,41 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/pages/facials",
+      "destination": "/facials",
+      "permanent": true
+    },
+    {
+      "source": "/pages/massage",
+      "destination": "/massage",
+      "permanent": true
+    },
+    {
+      "source": "/pages/waxing",
+      "destination": "/waxing",
+      "permanent": true
+    },
+    {
+      "source": "/pages/contact",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/collections/eyelash-collection",
+      "destination": "/eyelashes",
+      "permanent": true
+    },
+    {
+      "source": "/collections/colourful-lashes",
+      "destination": "/eyelashes",
+      "permanent": true
+    },
+    {
+      "source": "/collections/massage",
+      "destination": "/massage",
+      "permanent": true
+    }
+  ]
+}

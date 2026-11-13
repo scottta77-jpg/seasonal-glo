@@ -1,0 +1,1609 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smooth Waxing in Birmingham | Seasonal Glo'</title>
+  <meta name="description" content="Experience precision female waxing in Harborne, Birmingham at Seasonal Glo'. From Hollywood and Brazilian hot waxing to soothing Ingrown Hair Vagacials." />
+  <link rel="icon" href="https://framerusercontent.com/images/yEBtmdWjuAeEUEAtMSzA9HVNY8.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Inter:wght@400;500;600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-beige: rgb(218, 209, 198);
+      --bg-card: rgb(249, 249, 245);
+      --text-bronze: rgb(139, 85, 36);
+      --text-dark: rgb(71, 61, 51);
+      --text-muted: rgb(92, 91, 90);
+      --accent-gold: rgb(212, 190, 110);
+      --cream-white: rgb(255, 249, 242);
+      --dark-brown: rgb(66, 39, 13);
+      --border-brown: rgba(139, 85, 36, 0.25);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-beige);
+      color: var(--text-dark);
+      font-family: 'Lato', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    body {
+      background-color: var(--bg-beige);
+      overflow-x: hidden;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ===== HEADER & FULLSCREEN MENU OVERLAY (Exact Template Match) ===== */
+    .sg-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+    }
+    .sg-header-inner {
+      width: 100%;
+      max-width: 1220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      height: 44px;
+      pointer-events: auto;
+    }
+    .sg-logo-link {
+      display: inline-flex;
+      align-items: center;
+      height: 34px;
+      z-index: 1002;
+    }
+    .sg-logo-link img {
+      height: 34px;
+      width: auto;
+      display: block;
+    }
+    .sg-menu-btn {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 44px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-gold);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: var(--cream-white);
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      z-index: 1002;
+      transition: background 0.35s cubic-bezier(0.44, 0, 0.56, 1), color 0.35s cubic-bezier(0.44, 0, 0.56, 1), transform 0.25s ease;
+    }
+    .sg-menu-btn:hover {
+      background: rgba(212, 190, 110, 0.28);
+    }
+    .sg-menu-btn.is-open {
+      background: var(--accent-gold);
+      color: rgb(36, 26, 16);
+    }
+    .sg-menu-icon {
+      width: 22px;
+      height: 12px;
+      position: relative;
+      display: inline-block;
+    }
+    .sg-menu-icon span {
+      position: absolute;
+      left: 0;
+      height: 1.5px;
+      background: currentColor;
+      transition: transform 0.35s cubic-bezier(0.44, 0, 0.56, 1), width 0.35s ease, top 0.35s ease;
+    }
+    .sg-menu-icon span:first-child {
+      top: 2px;
+      width: 22px;
+    }
+    .sg-menu-icon span:last-child {
+      top: 9px;
+      width: 14px;
+      right: 0;
+      left: auto;
+    }
+    .sg-menu-btn.is-open .sg-menu-icon span:first-child {
+      top: 5px;
+      width: 20px;
+      transform: rotate(28deg);
+    }
+    .sg-menu-btn.is-open .sg-menu-icon span:last-child {
+      top: 5px;
+      width: 20px;
+      transform: rotate(-28deg);
+    }
+
+    /* Fullscreen Beige Overlay */
+    .sg-menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-beige);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 40px 40px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-12px);
+      transition: opacity 0.4s cubic-bezier(0.44, 0, 0.56, 1), transform 0.4s cubic-bezier(0.44, 0, 0.56, 1);
+    }
+    .sg-menu-overlay.is-open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    .sg-menu-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .sg-menu-link {
+      font-family: 'Playfair Display', serif;
+      font-size: 44px;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.15;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+    .sg-menu-link:hover,
+    .sg-menu-link.is-active {
+      color: var(--text-bronze);
+      transform: translateY(-2px);
+    }
+    .sg-menu-sublinks {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 24px;
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border-brown);
+    }
+    .sg-menu-sublinks a {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-bronze);
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(139, 85, 36, 0.28);
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .sg-menu-sublinks a:hover,
+    .sg-menu-sublinks a.is-active {
+      background: var(--text-bronze);
+      color: var(--cream-white);
+    }
+    .sg-menu-bottom {
+      position: absolute;
+      bottom: 36px;
+      left: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--text-dark);
+    }
+
+    /* ===== HERO SECTION (Exact Template Match) ===== */
+    .sg-hero {
+      position: relative;
+      width: 100%;
+      min-height: 860px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 140px 24px 100px;
+      overflow: hidden;
+      background: #1e120a;
+    }
+    .sg-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.88);
+    }
+    .sg-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(20, 11, 4, 0.72) 0%, rgba(20, 11, 4, 0.38) 55%, rgba(20, 11, 4, 0.25) 100%);
+    }
+    .sg-hero-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 620px;
+    }
+    .sg-hero-badge {
+      align-self: flex-end;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+    .sg-hero-avatars {
+      display: flex;
+      align-items: center;
+    }
+    .sg-hero-avatars img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(212, 190, 110, 0.6);
+    }
+    .sg-hero-avatars img + img {
+      margin-left: -14px;
+    }
+    .sg-hero-badge-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      font-weight: 400;
+      color: var(--cream-white);
+      line-height: 1.05;
+    }
+    .sg-hero-badge-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: rgba(255, 249, 242, 0.8);
+      max-width: 130px;
+      line-height: 1.35;
+      margin-top: 4px;
+    }
+    .sg-hero-content {
+      max-width: 780px;
+      margin-top: auto;
+    }
+    .sg-hero-eyebrow {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.9em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 18px;
+    }
+    .sg-hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(54px, 7.8vw, 112px);
+      font-weight: 500;
+      line-height: 1.04;
+      letter-spacing: -0.02em;
+      color: var(--cream-white);
+      margin-bottom: 24px;
+    }
+    .sg-hero-sub {
+      font-family: 'Lato', sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      color: rgba(255, 249, 242, 0.9);
+      max-width: 650px;
+      margin-bottom: 36px;
+    }
+    .sg-hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .sg-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 52px;
+      padding: 0 32px;
+      border-radius: 999px;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: transform 0.3s cubic-bezier(0.44, 0, 0.56, 1), background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .sg-btn:hover {
+      transform: translateY(-2px);
+    }
+    .sg-btn--white {
+      background: #ffffff;
+      color: rgb(36, 26, 16);
+      border: 1px solid #ffffff;
+    }
+    .sg-btn--white:hover {
+      background: var(--accent-gold);
+      border-color: var(--accent-gold);
+    }
+    .sg-btn--outline {
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #ffffff;
+      border: 1px solid var(--accent-gold);
+    }
+    .sg-btn--outline:hover {
+      background: var(--accent-gold);
+      color: rgb(36, 26, 16);
+    }
+    .sg-btn--brown {
+      background: var(--text-bronze);
+      color: var(--cream-white);
+      border: 1px solid var(--text-bronze);
+    }
+    .sg-btn--brown:hover {
+      background: var(--dark-brown);
+      border-color: var(--dark-brown);
+    }
+
+    /* ===== WHY CHOOSE US / STATEMENT SECTION ===== */
+    .sg-statement {
+      padding: 110px 24px 90px;
+      max-width: 1120px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .sg-eyebrow {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.75em;
+      text-transform: uppercase;
+      color: var(--text-bronze);
+      margin-bottom: 18px;
+    }
+    .sg-eyebrow--left {
+      letter-spacing: 0.28em;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .sg-statement-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 3.8vw, 48px);
+      font-weight: 400;
+      line-height: 1.24;
+      color: var(--text-bronze);
+      max-width: 920px;
+      margin: 0 auto 48px;
+    }
+    .sg-pill-trio {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 56px;
+    }
+    .sg-pill-trio img {
+      width: 95px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 999px;
+      box-shadow: 0 10px 28px rgba(66, 39, 13, 0.14);
+    }
+    .sg-stats-row {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 32px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .sg-stat-divider {
+      width: 1px;
+      height: 90px;
+      background: rgba(139, 85, 36, 0.2);
+    }
+    .sg-stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 46px;
+      font-weight: 500;
+      color: var(--text-dark);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .sg-stat-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .sg-stat-dots {
+      display: inline-flex;
+      gap: 6px;
+    }
+    .sg-stat-dots span {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--text-bronze);
+      opacity: 0.45;
+    }
+    .sg-stat-dots span:first-child {
+      opacity: 1;
+    }
+
+    /* ===== DETAILED TREATMENTS SECTION ===== */
+    .sg-details-section {
+      position: relative;
+      padding: 80px 24px 110px;
+      max-width: 1220px;
+      margin: 0 auto;
+    }
+    .sg-leaf-deco {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.55;
+      z-index: 0;
+    }
+    .sg-leaf-deco--left {
+      top: 0;
+      left: -120px;
+      width: 340px;
+    }
+    .sg-leaf-deco--right {
+      bottom: 80px;
+      right: -100px;
+      width: 300px;
+    }
+    .sg-section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 72px;
+      position: relative;
+      z-index: 1;
+    }
+    .sg-section-h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(34px, 4.4vw, 56px);
+      font-weight: 400;
+      line-height: 1.16;
+      color: var(--text-bronze);
+      margin-bottom: 16px;
+    }
+    .sg-section-sub {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+    .sg-detail-row {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 64px;
+      align-items: center;
+      margin-bottom: 96px;
+      background: rgba(249, 249, 245, 0.55);
+      border: 1px solid rgba(139, 85, 36, 0.16);
+      border-radius: 32px;
+      padding: 48px;
+    }
+    .sg-detail-row--reverse {
+      grid-template-columns: 0.9fr 1.1fr;
+    }
+    .sg-detail-row--reverse .sg-detail-text {
+      order: 2;
+    }
+    .sg-detail-row--reverse .sg-detail-media {
+      order: 1;
+    }
+    .sg-detail-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3.2vw, 42px);
+      font-weight: 400;
+      color: var(--text-bronze);
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+    .sg-detail-p {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      line-height: 1.72;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+    }
+    .sg-credentials-list {
+      margin: 24px 0 30px;
+      border-top: 1px solid rgba(139, 85, 36, 0.22);
+    }
+    .sg-credential-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(139, 85, 36, 0.22);
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      color: var(--text-dark);
+    }
+    .sg-leaf-bullet {
+      color: var(--accent-gold);
+      font-size: 16px;
+    }
+    .sg-detail-media {
+      display: flex;
+      justify-content: center;
+    }
+    .sg-detail-frame {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      aspect-ratio: 4 / 5;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 3px solid #ffffff;
+      box-shadow: 0 20px 50px rgba(66, 39, 13, 0.18);
+    }
+    .sg-detail-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.44, 0, 0.56, 1);
+    }
+    .sg-detail-frame:hover img {
+      transform: scale(1.05);
+    }
+    .sg-detail-card-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 36px 24px 22px;
+      background: linear-gradient(0deg, rgba(44, 24, 8, 0.88) 0%, rgba(44, 24, 8, 0) 100%);
+      color: var(--cream-white);
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+    }
+
+    /* ===== 3x2 HOVER-REVEAL SERVICE CARDS GRID (Exact Template Match) ===== */
+    .sg-services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: 100%;
+    }
+    .sg-services-intro {
+      background: var(--bg-beige);
+      padding: 56px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
+      min-height: 500px;
+      border-top: 1px solid rgba(139, 85, 36, 0.15);
+    }
+    .sg-services-intro h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(38px, 4vw, 56px);
+      font-weight: 400;
+      color: var(--text-bronze);
+      margin-bottom: 16px;
+    }
+    .sg-services-intro p {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      max-width: 380px;
+    }
+    .sg-scard {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 36px;
+      color: var(--cream-white);
+    }
+    .sg-scard-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.44, 0, 0.56, 1);
+    }
+    .sg-scard-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(186, 221, 255, 0) 50%, rgba(66, 33, 0, 0.82) 100%);
+      transition: opacity 0.4s ease;
+    }
+    .sg-scard-hover-glass {
+      position: absolute;
+      inset: 0;
+      background: rgba(80, 48, 17, 0.65);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      opacity: 0;
+      transition: opacity 0.4s cubic-bezier(0.44, 0, 0.56, 1);
+    }
+    .sg-scard:hover .sg-scard-bg {
+      transform: scale(1.05);
+    }
+    .sg-scard:hover .sg-scard-hover-glass {
+      opacity: 1;
+    }
+    .sg-scard-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+    .sg-scard-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      transition: transform 0.4s cubic-bezier(0.44, 0, 0.56, 1);
+    }
+    .sg-scard-details {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.45s cubic-bezier(0.44, 0, 0.56, 1), opacity 0.4s ease, margin-top 0.4s ease;
+    }
+    .sg-scard:hover .sg-scard-details {
+      max-height: 320px;
+      opacity: 1;
+      margin-top: 20px;
+    }
+    .sg-scard-point {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 249, 242, 0.22);
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      color: rgba(255, 249, 242, 0.95);
+    }
+    .sg-scard-price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-top: 24px;
+      color: var(--accent-gold);
+    }
+    .sg-scard-total {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+    }
+    .sg-scard-price-val {
+      display: flex;
+      align-items: baseline;
+      font-family: 'Playfair Display', serif;
+    }
+    .sg-scard-curr {
+      font-size: 22px;
+      margin-right: 2px;
+      align-self: flex-start;
+    }
+    .sg-scard-num {
+      font-size: 56px;
+      line-height: 1;
+    }
+    .sg-scard-dec {
+      font-size: 20px;
+    }
+
+    /* ===== BOOKING CTA SECTION (Exact Template Match) ===== */
+    .sg-cta-section {
+      position: relative;
+      width: 100%;
+      min-height: 760px;
+      display: flex;
+      align-items: center;
+      padding: 80px 24px;
+      background: #2b180a;
+      overflow: hidden;
+    }
+    .sg-cta-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .sg-cta-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1220px;
+      margin: 0 auto;
+    }
+    .sg-cta-card {
+      width: 100%;
+      max-width: 560px;
+      background: rgba(80, 48, 17, 0.72);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 48px 40px;
+      color: var(--cream-white);
+    }
+    .sg-cta-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 3.8vw, 48px);
+      font-weight: 400;
+      line-height: 1.15;
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+    .sg-cta-sub {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+      color: rgba(255, 249, 242, 0.85);
+      margin-bottom: 28px;
+    }
+    .sg-form-group {
+      margin-bottom: 18px;
+    }
+    .sg-form-label {
+      display: block;
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: rgba(255, 249, 242, 0.85);
+      margin-bottom: 6px;
+    }
+    .sg-form-input,
+    .sg-form-select,
+    .sg-form-textarea {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 249, 242, 0.3);
+      padding: 10px 0;
+      color: #ffffff;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.25s ease;
+    }
+    .sg-form-input::placeholder,
+    .sg-form-textarea::placeholder {
+      color: rgba(255, 249, 242, 0.45);
+    }
+    .sg-form-input:focus,
+    .sg-form-select:focus,
+    .sg-form-textarea:focus {
+      border-bottom-color: var(--accent-gold);
+    }
+    .sg-form-select option {
+      background: rgb(66, 39, 13);
+      color: #ffffff;
+    }
+    .sg-form-submit {
+      width: 100%;
+      height: 44px;
+      margin-top: 14px;
+      background: rgb(51, 51, 51);
+      color: #ffffff;
+      border: none;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.25s ease;
+    }
+    .sg-form-submit:hover {
+      background: var(--accent-gold);
+      color: rgb(36, 26, 16);
+    }
+
+    /* ===== FAQ ACCORDION SECTION (Exact Template Match) ===== */
+    .sg-faq-section {
+      padding: 110px 24px;
+      max-width: 1220px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .sg-faq-left h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 4.2vw, 56px);
+      font-weight: 400;
+      line-height: 1.12;
+      color: var(--text-bronze);
+      margin-bottom: 16px;
+    }
+    .sg-faq-left p {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      max-width: 440px;
+    }
+    .sg-faq-photo {
+      width: 100%;
+      max-width: 500px;
+      height: 326px;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+    .sg-faq-right {
+      padding-top: 24px;
+    }
+    .sg-faq-item {
+      border-bottom: 1.5px solid rgb(94, 62, 32);
+    }
+    .sg-faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 26px 0;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-align: left;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text-bronze);
+    }
+    .sg-faq-chevron {
+      display: inline-flex;
+      transition: transform 0.3s cubic-bezier(0.44, 0, 0.56, 1);
+    }
+    .sg-faq-item.is-open .sg-faq-chevron {
+      transform: rotate(90deg);
+    }
+    .sg-faq-a-wrap {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.38s cubic-bezier(0.44, 0, 0.56, 1);
+    }
+    .sg-faq-item.is-open .sg-faq-a-wrap {
+      max-height: 260px;
+    }
+    .sg-faq-a {
+      padding: 0 0 24px 28px;
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text-dark);
+    }
+
+    /* ===== FOOTER (Exact Template Match) ===== */
+    .sg-footer {
+      position: relative;
+      background: #1a0f07;
+      color: var(--cream-white);
+      padding: 90px 24px 40px;
+      overflow: hidden;
+    }
+    .sg-footer-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.42;
+    }
+    .sg-footer-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .sg-footer-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 64px;
+      border-bottom: 1px solid rgba(255, 249, 242, 0.14);
+    }
+    .sg-footer-col-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+      border-right: 1px solid rgba(255, 249, 242, 0.14);
+      padding-right: 32px;
+    }
+    .sg-footer-icon {
+      width: 40px;
+      height: 44px;
+    }
+    .sg-footer-desc {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255, 249, 242, 0.82);
+      max-width: 300px;
+    }
+    .sg-footer-contact {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--cream-white);
+    }
+    .sg-footer-copy {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: rgba(255, 249, 242, 0.65);
+    }
+    .sg-footer-col-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      border-right: 1px solid rgba(255, 249, 242, 0.14);
+    }
+    .sg-footer-nav-link {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--cream-white);
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+    .sg-footer-nav-link:hover {
+      color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+    .sg-footer-col-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    .sg-footer-social {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cream-white);
+      transition: color 0.25s ease, padding-right 0.25s ease;
+    }
+    .sg-footer-social:hover {
+      color: var(--accent-gold);
+      padding-right: 8px;
+    }
+    .sg-footer-wordmark {
+      width: 100%;
+      padding-top: 48px;
+      display: flex;
+      justify-content: center;
+    }
+    .sg-footer-wordmark img {
+      width: 100%;
+      max-width: 1240px;
+      height: auto;
+      display: block;
+    }
+
+    /* Scroll Reveal Animation */
+    .reveal-up {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive Tablet & Mobile */
+    @media (max-width: 1199px) {
+      .sg-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .sg-detail-row,
+      .sg-detail-row--reverse {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding: 36px 28px;
+      }
+      .sg-detail-row--reverse .sg-detail-text {
+        order: 1;
+      }
+      .sg-detail-row--reverse .sg-detail-media {
+        order: 2;
+      }
+      .sg-faq-section {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+    @media (max-width: 809px) {
+      .sg-hero {
+        min-height: 720px;
+        padding: 110px 20px 64px;
+      }
+      .sg-hero-badge {
+        align-self: flex-start;
+      }
+      .sg-hero-eyebrow {
+        letter-spacing: 0.45em;
+      }
+      .sg-services-grid {
+        grid-template-columns: 1fr;
+      }
+      .sg-services-intro {
+        min-height: auto;
+        padding: 44px 24px;
+      }
+      .sg-scard {
+        height: 420px;
+      }
+      .sg-scard .sg-scard-details {
+        max-height: 300px;
+        opacity: 1;
+        margin-top: 16px;
+      }
+      .sg-scard .sg-scard-hover-glass {
+        opacity: 0.45;
+      }
+      .sg-stat-divider {
+        display: none;
+      }
+      .sg-stats-row {
+        flex-direction: column;
+      }
+      .sg-footer-top {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .sg-footer-col-left,
+      .sg-footer-col-center,
+      .sg-footer-col-right {
+        border-right: none;
+        padding-right: 0;
+        align-items: center;
+      }
+      .sg-menu-bottom {
+        position: static;
+        margin-top: 36px;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="sg-header">
+    <div class="sg-header-inner">
+      <a href="/" class="sg-logo-link" aria-label="Seasonal Glo' Home">
+        <img src="/assets/images/header-logo.svg" alt="Seasonal Glo'" />
+      </a>
+      <button class="sg-menu-btn" id="sgMenuBtn" type="button" aria-label="Toggle Menu">
+        <span>Menu</span>
+        <span class="sg-menu-icon"><span></span><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- FULLSCREEN MENU OVERLAY -->
+  <div class="sg-menu-overlay" id="sgMenuOverlay">
+    <nav class="sg-menu-links" aria-label="Primary Navigation">
+      <a href="/#about" class="sg-menu-link">About</a>
+      <a href="/#services" class="sg-menu-link">Service</a>
+      <a href="/#team" class="sg-menu-link">Team</a>
+      <a href="/contact" class="sg-menu-link ">Contact</a>
+    </nav>
+    <div class="sg-menu-sublinks">
+      <a href="/" class="">Home</a>
+      <a href="/facials" class="">Facials</a>
+      <a href="/massage" class="">Massage</a>
+      <a href="/waxing" class="is-active">Waxing</a>
+      <a href="/eyelashes" class="">Shop Premium Eyelashes</a>
+      <a href="/contact" class="">Contact</a>
+    </div>
+    <div class="sg-menu-bottom">
+      <span>+44 7399 156171</span>
+      <span>info@seasonalgloltd.com</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="sg-hero">
+    <img src="https://framerusercontent.com/images/mgLkGijwZYaJhAOK1XhennzsRUU.png?width=1562&height=1270" alt="Seasonal Glo' Birmingham Sanctuary" class="sg-hero-bg" />
+    <div class="sg-hero-overlay"></div>
+    <div class="sg-hero-container">
+      <div class="sg-hero-badge">
+        <div class="sg-hero-avatars">
+          <img src="https://framerusercontent.com/images/LaRDfktiTYtkQicxgYny45QbNE.jpg?width=3638&height=5457" alt="Seasonal Glo' Guest" />
+          <img src="https://framerusercontent.com/images/1Te3AVoHmXTegMVNAEVG1uAQak.jpg?width=3648&height=4841" alt="Seasonal Glo' Guest" />
+        </div>
+        <div>
+          <div class="sg-hero-badge-num">2000+</div>
+          <div class="sg-hero-badge-label">clients glowing &amp; refreshed</div>
+        </div>
+      </div>
+      <div class="sg-hero-content">
+        <p class="sg-hero-eyebrow">HARBORNE, BIRMINGHAM</p>
+        <h1 class="sg-hero-title">Smooth Waxing<br />In Birmingham.</h1>
+        <p class="sg-hero-sub">Experience precision waxing in a calm, luxury setting where your comfort always comes first. At Seasonal Glo’ in Harborne, Birmingham, we specialise in professional female waxing, from Hollywood to Brazilian full legs to full face, our gentle approach leaves your skin silky smooth and irritation-free. Whether it’s your first time or you’re a regular, you’ll be cared for with expert technique, attention to detail, and complete discretion.</p>
+        <div class="sg-hero-btns">
+          <a href="https://www.fresha.com/book-now/seasonal-glo-ltd-y0n2dxef/all-offer?share=true&pId=810559" class="sg-btn sg-btn--white" target="_blank">BOOK NOW</a>
+          <a href="#treatments" class="sg-btn sg-btn--outline">EXPLORE WAXING</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATEMENT / WHY CHOOSE US -->
+  <section class="sg-statement">
+    <p class="sg-eyebrow reveal-up">PRECISION WAXING YOU CAN TRUST</p>
+    <h2 class="sg-statement-title reveal-up">We never double-dip our sticks, use gentle hot wax for sensitive intimate areas, and finish with precision tweezer detailing.</h2>
+    <div class="sg-pill-trio reveal-up">
+      <img src="https://framerusercontent.com/images/h7Ra51HOBh91QHfV4xcukwbjvI.jpg?width=1200&height=2133" alt="Seasonal Glo' Treatment" />
+      <img src="https://framerusercontent.com/images/OYqrhgXhLBtd39AD7tlPC5ShJvY.jpg?width=736&height=981" alt="Seasonal Glo' Sanctuary" />
+      <img src="https://framerusercontent.com/images/Q2aazBpgyQi6xleHMmhnHT3j5yQ.jpg?width=768&height=1376" alt="Seasonal Glo' Care" />
+    </div>
+    <div class="sg-stats-row">
+      
+        <div class="sg-stat-item reveal-up">
+          <div class="sg-stat-number">0%</div>
+          <p class="sg-stat-label">Double-Dipping — 100% Sanitary</p>
+          <div class="sg-stat-dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="sg-stat-divider"></div>
+        
+        <div class="sg-stat-item reveal-up">
+          <div class="sg-stat-number">£30+</div>
+          <p class="sg-stat-label">Intimate & Vagacial Care</p>
+          <div class="sg-stat-dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="sg-stat-divider"></div>
+        
+        <div class="sg-stat-item reveal-up">
+          <div class="sg-stat-number">6+</div>
+          <p class="sg-stat-label">Ladies Intimate Wax Styles</p>
+          <div class="sg-stat-dots"><span></span><span></span><span></span></div>
+        </div>
+        
+        
+    </div>
+  </section>
+
+  <!-- DETAILED CUSTOMER COPY SECTIONS -->
+  <section class="sg-details-section" id="treatments">
+    <img src="https://framerusercontent.com/images/oxdO6YakGwuarKwdiFvb42yIsZw.png?width=639&height=919" alt="" class="sg-leaf-deco sg-leaf-deco--left" />
+    <img src="https://framerusercontent.com/images/qz0UVvAJYJ9eBgUJajeVroZjDk.png?width=320&height=460" alt="" class="sg-leaf-deco sg-leaf-deco--right" />
+    <div class="sg-section-header reveal-up">
+      <p class="sg-eyebrow">LADIES INTIMATE HOT WAXING & CARE</p>
+      <h2 class="sg-section-h2">Silky Smooth, Irritation-Free,<br />With Complete Discretion.</h2>
+      <p class="sg-section-sub">For intimate areas we use gentle hot wax ideal for sensitive skin, while for full body areas such as arms, legs, and back we use strip wax for efficient, even results.</p>
+    </div>
+    
+        <div class="sg-detail-row  reveal-up">
+          <div class="sg-detail-text">
+            <p class="sg-eyebrow sg-eyebrow--left">LADIES INTIMATE HOT WAXING • 1 & 2 OF 6</p>
+            <h3 class="sg-detail-title">Bikini Wax & Extended Bikini Wax</h3>
+            <p class="sg-detail-p">Bikini Wax: Our Bikini Wax gently removes hair from the sides of the bikini line and the top of the V, keeping things neat and tidy while maintaining a natural look. Ideal for those who prefer a clean, smooth finish without going completely bare.</p><p class="sg-detail-p">Extended Bikini Wax: Our Extended Bikini Wax removes hair from the sides and top of the bikini line, plus up to four fingers under, making it perfect for those who love a more defined, polished look. Ideal for wearing more revealing bikinis with confidence and comfort.</p>
+            <div class="sg-credentials-list">
+              <div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Bikini Wax: Sides of Bikini Line & Top of the V</span></div><div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Extended Bikini Wax: Sides, Top & Up to Four Fingers Under</span></div><div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Gentle Hot Wax Formulated for Sensitive Intimate Skin</span></div>
+            </div>
+            <div class="sg-detail-actions">
+              <a href="https://www.fresha.com/book-now/seasonal-glo-ltd-y0n2dxef/all-offer?share=true&pId=810559" class="sg-btn sg-btn--brown" target="_blank">BOOK BIKINI WAX</a>
+            </div>
+          </div>
+          <div class="sg-detail-media">
+            <div class="sg-detail-frame">
+              <img src="https://framerusercontent.com/images/Q2aazBpgyQi6xleHMmhnHT3j5yQ.jpg?width=768&height=1376" alt="Bikini Wax & Extended Bikini Wax" />
+              <div class="sg-detail-card-caption">1. Bikini Wax & Extended Bikini Wax</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="sg-detail-row sg-detail-row--reverse reveal-up">
+          <div class="sg-detail-text">
+            <p class="sg-eyebrow sg-eyebrow--left">LADIES INTIMATE HOT WAXING • 3 & 4 OF 6</p>
+            <h3 class="sg-detail-title">Brazilian Wax & Hollywood Wax</h3>
+            <p class="sg-detail-p">Brazilian Wax: Our Brazilian Waxing treatment offers a smooth, flawless finish by removing all hair from the bikini area, including the V and both labias, with the option to leave a neat landing strip for a personalised touch.</p><p class="sg-detail-p">Hollywood Wax: Our Hollywood Wax gives you a completely smooth, hair-free finish by removing all hair from the front, sides, labias, and back. Perfect for those who love a clean, silky feel and long-lasting smoothness from every angle.</p>
+            <div class="sg-credentials-list">
+              <div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Brazilian Wax: Full Bikini, V & Labias with Optional Landing Strip</span></div><div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Hollywood Wax: Completely Hair-Free Front, Sides, Labias & Back</span></div><div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Finished with Precision Tweezer Detailing & Soothing Aftercare</span></div>
+            </div>
+            <div class="sg-detail-actions">
+              <a href="https://www.fresha.com/book-now/seasonal-glo-ltd-y0n2dxef/all-offer?share=true&pId=810559" class="sg-btn sg-btn--brown" target="_blank">BOOK BRAZILIAN OR HOLLYWOOD</a>
+            </div>
+          </div>
+          <div class="sg-detail-media">
+            <div class="sg-detail-frame">
+              <img src="https://framerusercontent.com/images/DYH2EVLhRPGydeaF5sVZVxoD4SM.jpg?width=1080&height=1350" alt="Brazilian Wax & Hollywood Wax" />
+              <div class="sg-detail-card-caption">2. Brazilian Wax & Hollywood Wax</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="sg-detail-row  reveal-up">
+          <div class="sg-detail-text">
+            <p class="sg-eyebrow sg-eyebrow--left">LADIES INTIMATE HOT WAXING • 5 & 6 OF 6</p>
+            <h3 class="sg-detail-title">Playboy Wax & Underarm Wax</h3>
+            <p class="sg-detail-p">Playboy Wax: Our Playboy Wax offers the ultimate smooth finish, removing all hair included in the Hollywood wax plus the bottom cheeks for a flawlessly clean result. Ideal for those who want that extra-sleek, confident feel from every angle.</p><p class="sg-detail-p">Underarm Wax: Our Underarm Wax leaves your skin smooth, clean, and fresh by removing all unwanted hair with gentle hot wax. Perfect for achieving soft, confident underarms and longer-lasting smoothness.</p>
+            <div class="sg-credentials-list">
+              <div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Playboy Wax: Full Hollywood Wax Plus Bottom Cheeks</span></div><div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Underarm Wax: Gentle Hot Wax for Soft, Long-Lasting Smoothness</span></div><div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Full Body Strip Wax Also Available for Arms, Legs & Back</span></div>
+            </div>
+            <div class="sg-detail-actions">
+              <a href="https://www.fresha.com/book-now/seasonal-glo-ltd-y0n2dxef/all-offer?share=true&pId=810559" class="sg-btn sg-btn--brown" target="_blank">BOOK PLAYBOY OR UNDERARM WAX</a>
+            </div>
+          </div>
+          <div class="sg-detail-media">
+            <div class="sg-detail-frame">
+              <img src="https://framerusercontent.com/images/h7Ra51HOBh91QHfV4xcukwbjvI.jpg?width=1200&height=2133" alt="Playboy Wax & Underarm Wax" />
+              <div class="sg-detail-card-caption">3. Playboy Wax & Underarm Wax</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="sg-detail-row sg-detail-row--reverse reveal-up">
+          <div class="sg-detail-text">
+            <p class="sg-eyebrow sg-eyebrow--left">PRICES STARTING FROM £30 • THE VAGACIAL</p>
+            <h3 class="sg-detail-title">Ingrown Hair Treatment</h3>
+            <p class="sg-detail-p">If you’re suffering with ingrown hairs, bumps, or irritation, this treatment is perfect for you. Our Ingrown Hair Treatment, also known as the Vagacial, includes a double cleanse, chemical exfoliation leave-on treatment, soothing mask, and skin protection to calm, smooth, and restore your intimate area. It can be done 48 hours before or after waxing, but not at the same time, leaving your skin refreshed and glowing.</p><p class="sg-detail-p">Precision Waxing You Can Trust at Seasonal Glo’: At Seasonal Glo’, every wax is done with precision, hygiene, and care, because smooth, flawless skin isn’t just a treat, it’s a promise. We never double-dip our sticks, ensuring each treatment is fully sanitary and tailored just to you. Using a tweezer for those last fine details ensures that your skin is immaculate right down to the last hair.</p>
+            <div class="sg-credentials-list">
+              <div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Double Cleanse, Chemical Exfoliation, Soothing Mask & Protection</span></div><div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Book 48 Hours Before or After Your Waxing Appointment</span></div><div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Strict No Double-Dipping Promise & Premium Aftercare</span></div>
+            </div>
+            <div class="sg-detail-actions">
+              <a href="https://www.fresha.com/book-now/seasonal-glo-ltd-y0n2dxef/all-offer?share=true&pId=810559" class="sg-btn sg-btn--brown" target="_blank">BOOK INGROWN HAIR TREATMENT</a>
+            </div>
+          </div>
+          <div class="sg-detail-media">
+            <div class="sg-detail-frame">
+              <img src="https://framerusercontent.com/images/Sas7g92sbpYeHzGxGi8q9YOOZsI.png?width=843&height=1264" alt="Ingrown Hair Treatment" />
+              <div class="sg-detail-card-caption">4. Ingrown Hair Treatment</div>
+            </div>
+          </div>
+        </div>
+        
+  </section>
+
+  
+
+  <!-- 3x2 SIGNATURE EXPERIENCES GRID -->
+  <section class="sg-services-grid" id="services">
+    <div class="sg-services-intro">
+      <h2>Intimate & Body Wax</h2>
+      <p>Precision female waxing in Harborne using gentle hot wax for intimate areas and strip wax for full body.</p>
+    </div>
+    
+        <a href="#cta" class="sg-scard">
+          <img src="https://framerusercontent.com/images/Q2aazBpgyQi6xleHMmhnHT3j5yQ.jpg?width=768&height=1376" alt="Bikini & Extended" class="sg-scard-bg" loading="lazy" />
+          <div class="sg-scard-gradient"></div>
+          <div class="sg-scard-hover-glass"></div>
+          <div class="sg-scard-inner">
+            <h3 class="sg-scard-title">Bikini & Extended</h3>
+            <div class="sg-scard-details">
+              <div class="sg-scard-points">
+                <div class="sg-scard-point"><p>Sides & top of bikini line</p></div><div class="sg-scard-point"><p>Extended: 4 fingers under</p></div><div class="sg-scard-point"><p>Gentle sensitive hot wax</p></div><div class="sg-scard-point"><p>Precision tweezer finish</p></div>
+              </div>
+              <div class="sg-scard-price-row">
+                <span class="sg-scard-total">Total:</span>
+                <div class="sg-scard-price-val">
+                  <span class="sg-scard-curr">£</span>
+                  <span class="sg-scard-num">25</span>
+                  <span class="sg-scard-dec">.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        
+        <a href="#cta" class="sg-scard">
+          <img src="https://framerusercontent.com/images/DYH2EVLhRPGydeaF5sVZVxoD4SM.jpg?width=1080&height=1350" alt="Brazilian Wax" class="sg-scard-bg" loading="lazy" />
+          <div class="sg-scard-gradient"></div>
+          <div class="sg-scard-hover-glass"></div>
+          <div class="sg-scard-inner">
+            <h3 class="sg-scard-title">Brazilian Wax</h3>
+            <div class="sg-scard-details">
+              <div class="sg-scard-points">
+                <div class="sg-scard-point"><p>Removes hair from V & labias</p></div><div class="sg-scard-point"><p>Optional neat landing strip</p></div><div class="sg-scard-point"><p>Zero double-dipping hygiene</p></div><div class="sg-scard-point"><p>Calming luxury aftercare</p></div>
+              </div>
+              <div class="sg-scard-price-row">
+                <span class="sg-scard-total">Total:</span>
+                <div class="sg-scard-price-val">
+                  <span class="sg-scard-curr">£</span>
+                  <span class="sg-scard-num">35</span>
+                  <span class="sg-scard-dec">.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        
+        <a href="#cta" class="sg-scard">
+          <img src="https://framerusercontent.com/images/h7Ra51HOBh91QHfV4xcukwbjvI.jpg?width=1200&height=2133" alt="Hollywood Wax" class="sg-scard-bg" loading="lazy" />
+          <div class="sg-scard-gradient"></div>
+          <div class="sg-scard-hover-glass"></div>
+          <div class="sg-scard-inner">
+            <h3 class="sg-scard-title">Hollywood Wax</h3>
+            <div class="sg-scard-details">
+              <div class="sg-scard-points">
+                <div class="sg-scard-point"><p>Completely smooth finish</p></div><div class="sg-scard-point"><p>Front, sides, labias & back</p></div><div class="sg-scard-point"><p>Gentle intimate hot wax</p></div><div class="sg-scard-point"><p>Long-lasting silkiness</p></div>
+              </div>
+              <div class="sg-scard-price-row">
+                <span class="sg-scard-total">Total:</span>
+                <div class="sg-scard-price-val">
+                  <span class="sg-scard-curr">£</span>
+                  <span class="sg-scard-num">38</span>
+                  <span class="sg-scard-dec">.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        
+        <a href="#cta" class="sg-scard">
+          <img src="https://framerusercontent.com/images/Sas7g92sbpYeHzGxGi8q9YOOZsI.png?width=843&height=1264" alt="Playboy Wax" class="sg-scard-bg" loading="lazy" />
+          <div class="sg-scard-gradient"></div>
+          <div class="sg-scard-hover-glass"></div>
+          <div class="sg-scard-inner">
+            <h3 class="sg-scard-title">Playboy Wax</h3>
+            <div class="sg-scard-details">
+              <div class="sg-scard-points">
+                <div class="sg-scard-point"><p>Full Hollywood wax included</p></div><div class="sg-scard-point"><p>Plus smooth bottom cheeks</p></div><div class="sg-scard-point"><p>Extra-sleek confident finish</p></div><div class="sg-scard-point"><p>Complete discretion & care</p></div>
+              </div>
+              <div class="sg-scard-price-row">
+                <span class="sg-scard-total">Total:</span>
+                <div class="sg-scard-price-val">
+                  <span class="sg-scard-curr">£</span>
+                  <span class="sg-scard-num">45</span>
+                  <span class="sg-scard-dec">.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        
+        <a href="#cta" class="sg-scard">
+          <img src="https://framerusercontent.com/images/Q2aazBpgyQi6xleHMmhnHT3j5yQ.jpg?width=768&height=1376" alt="Vagacial Care" class="sg-scard-bg" loading="lazy" />
+          <div class="sg-scard-gradient"></div>
+          <div class="sg-scard-hover-glass"></div>
+          <div class="sg-scard-inner">
+            <h3 class="sg-scard-title">Vagacial Care</h3>
+            <div class="sg-scard-details">
+              <div class="sg-scard-points">
+                <div class="sg-scard-point"><p>Treats ingrown hairs & bumps</p></div><div class="sg-scard-point"><p>Double cleanse & exfoliation</p></div><div class="sg-scard-point"><p>Soothing intimate mask</p></div><div class="sg-scard-point"><p>48h before or after waxing</p></div>
+              </div>
+              <div class="sg-scard-price-row">
+                <span class="sg-scard-total">Total:</span>
+                <div class="sg-scard-price-val">
+                  <span class="sg-scard-curr">£</span>
+                  <span class="sg-scard-num">30</span>
+                  <span class="sg-scard-dec">.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        
+  </section>
+
+  <!-- BOOKING CTA SECTION -->
+  <section class="sg-cta-section" id="cta">
+    <img src="https://framerusercontent.com/images/mGhGb2FUId1x1vbFnUgRhpiSpl8.png?width=1663&height=1319" alt="Book Your Seasonal Glo' Experience" class="sg-cta-bg" />
+    <div class="sg-cta-container">
+      <div class="sg-cta-card reveal-up">
+        <h2 class="sg-cta-title">Book Your<br />Seasonal Glo'<br />Spa Sanctuary</h2>
+        <p class="sg-cta-sub">Pause, breathe, and choose yourself again at our Harborne, Birmingham sanctuary.</p>
+        <form class="sg-booking-form">
+          <div class="sg-form-group">
+            <label class="sg-form-label">Name</label>
+            <input type="text" class="sg-form-input" placeholder="Jane Smith" required />
+          </div>
+          <div class="sg-form-group">
+            <label class="sg-form-label">Email *</label>
+            <input type="email" class="sg-form-input" placeholder="jane@seasonalgloltd.com" required />
+          </div>
+          <div class="sg-form-group">
+            <label class="sg-form-label">Phone Number</label>
+            <input type="tel" class="sg-form-input" placeholder="07399 156171" />
+          </div>
+          <div class="sg-form-group">
+            <label class="sg-form-label">Service</label>
+            <select class="sg-form-select" required>
+              <option value="" disabled selected>Select Service</option>
+              <option value="Facials">Deluxe &amp; Medical-Grade Facials (From £45)</option>
+              <option value="Massage">Luxury Massages (From £30)</option>
+              <option value="Waxing">Smooth Intimate &amp; Body Waxing (From £30)</option>
+              <option value="Makeup">Flawless Transformation Makeup</option>
+              <option value="Eyelashes">Premium Eyelashes Collection (From £10)</option>
+              <option value="Couples">Join The Couples Massage Waitlist</option>
+            </select>
+          </div>
+          <div class="sg-form-group">
+            <label class="sg-form-label">Comment</label>
+            <input type="text" class="sg-form-input" placeholder="Preferred date, add-ons, or questions..." />
+          </div>
+          <button type="submit" class="sg-form-submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ ACCORDION SECTION -->
+  <section class="sg-faq-section">
+    <div class="sg-faq-left reveal-up">
+      <h2>Everything You<br />Need to Know.</h2>
+      <p>Feel good, live good, and look good at Seasonal Glo' — 10 Hampton Court Road, Harborne, Birmingham.</p>
+      <img src="https://framerusercontent.com/images/nUnGtAEPfgxjT0fwFbzQrqnUyz0.png?width=736&height=736" alt="Seasonal Glo' Guest" class="sg-faq-photo" loading="lazy" />
+    </div>
+    <div class="sg-faq-right reveal-up">
+      
+        <div class="sg-faq-item is-open">
+          <button class="sg-faq-q" type="button" aria-expanded="true">
+            <span class="sg-faq-chevron">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4.5 2.5L9.5 7L4.5 11.5" stroke="#8B5524" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="sg-faq-q-text">What makes Seasonal Glo' waxing gentler for sensitive skin?</span>
+          </button>
+          <div class="sg-faq-a-wrap">
+            <p class="sg-faq-a">For all intimate areas we use gentle hot wax, which adheres to the hair rather than the skin, making it ideal and far less aggressive for sensitive areas. For larger body areas like legs, arms, and back, we use high-efficiency strip wax.</p>
+          </div>
+        </div>
+        
+        <div class="sg-faq-item ">
+          <button class="sg-faq-q" type="button" aria-expanded="false">
+            <span class="sg-faq-chevron">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4.5 2.5L9.5 7L4.5 11.5" stroke="#8B5524" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="sg-faq-q-text">What are your hygiene standards during waxing?</span>
+          </button>
+          <div class="sg-faq-a-wrap">
+            <p class="sg-faq-a">We never double-dip our sticks, ensuring every single application is 100% sanitary and tailored just to you, followed by precision tweezer detailing and soothing aftercare.</p>
+          </div>
+        </div>
+        
+        <div class="sg-faq-item ">
+          <button class="sg-faq-q" type="button" aria-expanded="false">
+            <span class="sg-faq-chevron">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4.5 2.5L9.5 7L4.5 11.5" stroke="#8B5524" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="sg-faq-q-text">What is the difference between Brazilian, Hollywood, and Playboy Wax?</span>
+          </button>
+          <div class="sg-faq-a-wrap">
+            <p class="sg-faq-a">Brazilian removes hair from the V and labias while leaving an optional neat landing strip. Hollywood removes all hair from the front, sides, labias, and back. Playboy includes everything in the Hollywood wax plus the bottom cheeks.</p>
+          </div>
+        </div>
+        
+        <div class="sg-faq-item ">
+          <button class="sg-faq-q" type="button" aria-expanded="false">
+            <span class="sg-faq-chevron">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4.5 2.5L9.5 7L4.5 11.5" stroke="#8B5524" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="sg-faq-q-text">Can I book the Ingrown Hair Treatment (Vagacial) on the same day as my wax?</span>
+          </button>
+          <div class="sg-faq-a-wrap">
+            <p class="sg-faq-a">The Ingrown Hair Treatment (from £30) can be done 48 hours before or 48 hours after waxing, but not at the same time, so your skin remains calm, protected, and irritation-free.</p>
+          </div>
+        </div>
+        
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="sg-footer">
+    <img src="https://framerusercontent.com/images/mgLkGijwZYaJhAOK1XhennzsRUU.png?width=1562&height=1270" alt="" class="sg-footer-bg" />
+    <div class="sg-footer-inner">
+      <div class="sg-footer-top">
+        <div class="sg-footer-col-left">
+          <img src="/assets/images/footer-icon.svg" alt="Seasonal Glo'" class="sg-footer-icon" />
+          <p class="sg-footer-desc">Your Harborne, Birmingham sanctuary to feel good, live good, and look good daily.</p>
+          <div class="sg-footer-contact">
+            <div>10 Hampton Court Road, Harborne, Birmingham, B17 9AE</div>
+            <div>+44 7399 156171</div>
+            <div>info@seasonalgloltd.com</div>
+          </div>
+          <p class="sg-footer-copy">© 2026 Seasonal Glo'. All Rights Reserved.</p>
+        </div>
+        <div class="sg-footer-col-center">
+          <a href="/" class="sg-footer-nav-link">Home</a>
+          <a href="/facials" class="sg-footer-nav-link">Facials</a>
+          <a href="/massage" class="sg-footer-nav-link">Massage</a>
+          <a href="/waxing" class="sg-footer-nav-link">Waxing</a>
+          <a href="/eyelashes" class="sg-footer-nav-link">Eyelashes</a>
+          <a href="/contact" class="sg-footer-nav-link">Contact</a>
+        </div>
+        <div class="sg-footer-col-right">
+          <a href="https://www.fresha.com/book-now/seasonal-glo-ltd-y0n2dxef/all-offer?share=true&pId=810559" target="_blank" class="sg-footer-social">BOOK ON FRESHA</a>
+          <a href="https://www.instagram.com/seasonalgloltd" target="_blank" class="sg-footer-social">INSTAGRAM</a>
+          <a href="/eyelashes" class="sg-footer-social">SHOP EYELASHES</a>
+        </div>
+      </div>
+      <div class="sg-footer-wordmark">
+        <img src="/assets/images/footer-logo.svg" alt="Seasonal Glo'" />
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Menu Toggle
+      const menuBtn = document.getElementById("sgMenuBtn");
+      const menuOverlay = document.getElementById("sgMenuOverlay");
+      if (menuBtn && menuOverlay) {
+        menuBtn.addEventListener("click", () => {
+          const open = menuOverlay.classList.toggle("is-open");
+          menuBtn.classList.toggle("is-open", open);
+        });
+        menuOverlay.querySelectorAll("a").forEach(a => {
+          a.addEventListener("click", () => {
+            menuOverlay.classList.remove("is-open");
+            menuBtn.classList.remove("is-open");
+          });
+        });
+      }
+
+      // FAQ Accordion
+      document.querySelectorAll(".sg-faq-q").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const item = btn.closest(".sg-faq-item");
+          const isOpen = item.classList.toggle("is-open");
+          btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+      });
+
+      // Scroll Reveal Observer
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll(".reveal-up").forEach(el => observer.observe(el));
+
+      // Form Handling
+      document.querySelectorAll("form").forEach(form => {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const btn = form.querySelector("button[type='submit']");
+          if (btn) {
+            btn.textContent = "Thank you — Redirecting to Fresha...";
+          }
+          setTimeout(() => {
+            window.open("https://www.fresha.com/book-now/seasonal-glo-ltd-y0n2dxef/all-offer?share=true&pId=810559", "_blank");
+          }, 800);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

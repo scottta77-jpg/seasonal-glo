@@ -1,0 +1,1609 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop Premium Eyelashes & Makeup | Seasonal Glo'</title>
+  <meta name="description" content="Enhance your beauty with Seasonal Glo's Premium Eyelashes Collection (15mm, 20mm, 25mm strip lashes, colourful lashes, DIY cluster kits) and professional makeup services." />
+  <link rel="icon" href="https://framerusercontent.com/images/yEBtmdWjuAeEUEAtMSzA9HVNY8.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Inter:wght@400;500;600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-beige: rgb(218, 209, 198);
+      --bg-card: rgb(249, 249, 245);
+      --text-bronze: rgb(139, 85, 36);
+      --text-dark: rgb(71, 61, 51);
+      --text-muted: rgb(92, 91, 90);
+      --accent-gold: rgb(212, 190, 110);
+      --cream-white: rgb(255, 249, 242);
+      --dark-brown: rgb(66, 39, 13);
+      --border-brown: rgba(139, 85, 36, 0.25);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-beige);
+      color: var(--text-dark);
+      font-family: 'Lato', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    body {
+      background-color: var(--bg-beige);
+      overflow-x: hidden;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ===== HEADER & FULLSCREEN MENU OVERLAY (Exact Template Match) ===== */
+    .sg-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+    }
+    .sg-header-inner {
+      width: 100%;
+      max-width: 1220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      height: 44px;
+      pointer-events: auto;
+    }
+    .sg-logo-link {
+      display: inline-flex;
+      align-items: center;
+      height: 34px;
+      z-index: 1002;
+    }
+    .sg-logo-link img {
+      height: 34px;
+      width: auto;
+      display: block;
+    }
+    .sg-menu-btn {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 44px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-gold);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: var(--cream-white);
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      z-index: 1002;
+      transition: background 0.35s cubic-bezier(0.44, 0, 0.56, 1), color 0.35s cubic-bezier(0.44, 0, 0.56, 1), transform 0.25s ease;
+    }
+    .sg-menu-btn:hover {
+      background: rgba(212, 190, 110, 0.28);
+    }
+    .sg-menu-btn.is-open {
+      background: var(--accent-gold);
+      color: rgb(36, 26, 16);
+    }
+    .sg-menu-icon {
+      width: 22px;
+      height: 12px;
+      position: relative;
+      display: inline-block;
+    }
+    .sg-menu-icon span {
+      position: absolute;
+      left: 0;
+      height: 1.5px;
+      background: currentColor;
+      transition: transform 0.35s cubic-bezier(0.44, 0, 0.56, 1), width 0.35s ease, top 0.35s ease;
+    }
+    .sg-menu-icon span:first-child {
+      top: 2px;
+      width: 22px;
+    }
+    .sg-menu-icon span:last-child {
+      top: 9px;
+      width: 14px;
+      right: 0;
+      left: auto;
+    }
+    .sg-menu-btn.is-open .sg-menu-icon span:first-child {
+      top: 5px;
+      width: 20px;
+      transform: rotate(28deg);
+    }
+    .sg-menu-btn.is-open .sg-menu-icon span:last-child {
+      top: 5px;
+      width: 20px;
+      transform: rotate(-28deg);
+    }
+
+    /* Fullscreen Beige Overlay */
+    .sg-menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-beige);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 40px 40px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-12px);
+      transition: opacity 0.4s cubic-bezier(0.44, 0, 0.56, 1), transform 0.4s cubic-bezier(0.44, 0, 0.56, 1);
+    }
+    .sg-menu-overlay.is-open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    .sg-menu-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .sg-menu-link {
+      font-family: 'Playfair Display', serif;
+      font-size: 44px;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.15;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+    .sg-menu-link:hover,
+    .sg-menu-link.is-active {
+      color: var(--text-bronze);
+      transform: translateY(-2px);
+    }
+    .sg-menu-sublinks {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 24px;
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border-brown);
+    }
+    .sg-menu-sublinks a {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-bronze);
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(139, 85, 36, 0.28);
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .sg-menu-sublinks a:hover,
+    .sg-menu-sublinks a.is-active {
+      background: var(--text-bronze);
+      color: var(--cream-white);
+    }
+    .sg-menu-bottom {
+      position: absolute;
+      bottom: 36px;
+      left: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--text-dark);
+    }
+
+    /* ===== HERO SECTION (Exact Template Match) ===== */
+    .sg-hero {
+      position: relative;
+      width: 100%;
+      min-height: 860px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 140px 24px 100px;
+      overflow: hidden;
+      background: #1e120a;
+    }
+    .sg-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.88);
+    }
+    .sg-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(20, 11, 4, 0.72) 0%, rgba(20, 11, 4, 0.38) 55%, rgba(20, 11, 4, 0.25) 100%);
+    }
+    .sg-hero-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 620px;
+    }
+    .sg-hero-badge {
+      align-self: flex-end;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+    .sg-hero-avatars {
+      display: flex;
+      align-items: center;
+    }
+    .sg-hero-avatars img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(212, 190, 110, 0.6);
+    }
+    .sg-hero-avatars img + img {
+      margin-left: -14px;
+    }
+    .sg-hero-badge-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      font-weight: 400;
+      color: var(--cream-white);
+      line-height: 1.05;
+    }
+    .sg-hero-badge-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: rgba(255, 249, 242, 0.8);
+      max-width: 130px;
+      line-height: 1.35;
+      margin-top: 4px;
+    }
+    .sg-hero-content {
+      max-width: 780px;
+      margin-top: auto;
+    }
+    .sg-hero-eyebrow {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.9em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 18px;
+    }
+    .sg-hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(54px, 7.8vw, 112px);
+      font-weight: 500;
+      line-height: 1.04;
+      letter-spacing: -0.02em;
+      color: var(--cream-white);
+      margin-bottom: 24px;
+    }
+    .sg-hero-sub {
+      font-family: 'Lato', sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      color: rgba(255, 249, 242, 0.9);
+      max-width: 650px;
+      margin-bottom: 36px;
+    }
+    .sg-hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .sg-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 52px;
+      padding: 0 32px;
+      border-radius: 999px;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: transform 0.3s cubic-bezier(0.44, 0, 0.56, 1), background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .sg-btn:hover {
+      transform: translateY(-2px);
+    }
+    .sg-btn--white {
+      background: #ffffff;
+      color: rgb(36, 26, 16);
+      border: 1px solid #ffffff;
+    }
+    .sg-btn--white:hover {
+      background: var(--accent-gold);
+      border-color: var(--accent-gold);
+    }
+    .sg-btn--outline {
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #ffffff;
+      border: 1px solid var(--accent-gold);
+    }
+    .sg-btn--outline:hover {
+      background: var(--accent-gold);
+      color: rgb(36, 26, 16);
+    }
+    .sg-btn--brown {
+      background: var(--text-bronze);
+      color: var(--cream-white);
+      border: 1px solid var(--text-bronze);
+    }
+    .sg-btn--brown:hover {
+      background: var(--dark-brown);
+      border-color: var(--dark-brown);
+    }
+
+    /* ===== WHY CHOOSE US / STATEMENT SECTION ===== */
+    .sg-statement {
+      padding: 110px 24px 90px;
+      max-width: 1120px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .sg-eyebrow {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.75em;
+      text-transform: uppercase;
+      color: var(--text-bronze);
+      margin-bottom: 18px;
+    }
+    .sg-eyebrow--left {
+      letter-spacing: 0.28em;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .sg-statement-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 3.8vw, 48px);
+      font-weight: 400;
+      line-height: 1.24;
+      color: var(--text-bronze);
+      max-width: 920px;
+      margin: 0 auto 48px;
+    }
+    .sg-pill-trio {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 56px;
+    }
+    .sg-pill-trio img {
+      width: 95px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 999px;
+      box-shadow: 0 10px 28px rgba(66, 39, 13, 0.14);
+    }
+    .sg-stats-row {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 32px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .sg-stat-divider {
+      width: 1px;
+      height: 90px;
+      background: rgba(139, 85, 36, 0.2);
+    }
+    .sg-stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 46px;
+      font-weight: 500;
+      color: var(--text-dark);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .sg-stat-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .sg-stat-dots {
+      display: inline-flex;
+      gap: 6px;
+    }
+    .sg-stat-dots span {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--text-bronze);
+      opacity: 0.45;
+    }
+    .sg-stat-dots span:first-child {
+      opacity: 1;
+    }
+
+    /* ===== DETAILED TREATMENTS SECTION ===== */
+    .sg-details-section {
+      position: relative;
+      padding: 80px 24px 110px;
+      max-width: 1220px;
+      margin: 0 auto;
+    }
+    .sg-leaf-deco {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.55;
+      z-index: 0;
+    }
+    .sg-leaf-deco--left {
+      top: 0;
+      left: -120px;
+      width: 340px;
+    }
+    .sg-leaf-deco--right {
+      bottom: 80px;
+      right: -100px;
+      width: 300px;
+    }
+    .sg-section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 72px;
+      position: relative;
+      z-index: 1;
+    }
+    .sg-section-h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(34px, 4.4vw, 56px);
+      font-weight: 400;
+      line-height: 1.16;
+      color: var(--text-bronze);
+      margin-bottom: 16px;
+    }
+    .sg-section-sub {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+    .sg-detail-row {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 64px;
+      align-items: center;
+      margin-bottom: 96px;
+      background: rgba(249, 249, 245, 0.55);
+      border: 1px solid rgba(139, 85, 36, 0.16);
+      border-radius: 32px;
+      padding: 48px;
+    }
+    .sg-detail-row--reverse {
+      grid-template-columns: 0.9fr 1.1fr;
+    }
+    .sg-detail-row--reverse .sg-detail-text {
+      order: 2;
+    }
+    .sg-detail-row--reverse .sg-detail-media {
+      order: 1;
+    }
+    .sg-detail-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3.2vw, 42px);
+      font-weight: 400;
+      color: var(--text-bronze);
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+    .sg-detail-p {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      line-height: 1.72;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+    }
+    .sg-credentials-list {
+      margin: 24px 0 30px;
+      border-top: 1px solid rgba(139, 85, 36, 0.22);
+    }
+    .sg-credential-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(139, 85, 36, 0.22);
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      color: var(--text-dark);
+    }
+    .sg-leaf-bullet {
+      color: var(--accent-gold);
+      font-size: 16px;
+    }
+    .sg-detail-media {
+      display: flex;
+      justify-content: center;
+    }
+    .sg-detail-frame {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      aspect-ratio: 4 / 5;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 3px solid #ffffff;
+      box-shadow: 0 20px 50px rgba(66, 39, 13, 0.18);
+    }
+    .sg-detail-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.44, 0, 0.56, 1);
+    }
+    .sg-detail-frame:hover img {
+      transform: scale(1.05);
+    }
+    .sg-detail-card-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 36px 24px 22px;
+      background: linear-gradient(0deg, rgba(44, 24, 8, 0.88) 0%, rgba(44, 24, 8, 0) 100%);
+      color: var(--cream-white);
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+    }
+
+    /* ===== 3x2 HOVER-REVEAL SERVICE CARDS GRID (Exact Template Match) ===== */
+    .sg-services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: 100%;
+    }
+    .sg-services-intro {
+      background: var(--bg-beige);
+      padding: 56px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
+      min-height: 500px;
+      border-top: 1px solid rgba(139, 85, 36, 0.15);
+    }
+    .sg-services-intro h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(38px, 4vw, 56px);
+      font-weight: 400;
+      color: var(--text-bronze);
+      margin-bottom: 16px;
+    }
+    .sg-services-intro p {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      max-width: 380px;
+    }
+    .sg-scard {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 36px;
+      color: var(--cream-white);
+    }
+    .sg-scard-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.44, 0, 0.56, 1);
+    }
+    .sg-scard-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(186, 221, 255, 0) 50%, rgba(66, 33, 0, 0.82) 100%);
+      transition: opacity 0.4s ease;
+    }
+    .sg-scard-hover-glass {
+      position: absolute;
+      inset: 0;
+      background: rgba(80, 48, 17, 0.65);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      opacity: 0;
+      transition: opacity 0.4s cubic-bezier(0.44, 0, 0.56, 1);
+    }
+    .sg-scard:hover .sg-scard-bg {
+      transform: scale(1.05);
+    }
+    .sg-scard:hover .sg-scard-hover-glass {
+      opacity: 1;
+    }
+    .sg-scard-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+    .sg-scard-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      transition: transform 0.4s cubic-bezier(0.44, 0, 0.56, 1);
+    }
+    .sg-scard-details {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.45s cubic-bezier(0.44, 0, 0.56, 1), opacity 0.4s ease, margin-top 0.4s ease;
+    }
+    .sg-scard:hover .sg-scard-details {
+      max-height: 320px;
+      opacity: 1;
+      margin-top: 20px;
+    }
+    .sg-scard-point {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 249, 242, 0.22);
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      color: rgba(255, 249, 242, 0.95);
+    }
+    .sg-scard-price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-top: 24px;
+      color: var(--accent-gold);
+    }
+    .sg-scard-total {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+    }
+    .sg-scard-price-val {
+      display: flex;
+      align-items: baseline;
+      font-family: 'Playfair Display', serif;
+    }
+    .sg-scard-curr {
+      font-size: 22px;
+      margin-right: 2px;
+      align-self: flex-start;
+    }
+    .sg-scard-num {
+      font-size: 56px;
+      line-height: 1;
+    }
+    .sg-scard-dec {
+      font-size: 20px;
+    }
+
+    /* ===== BOOKING CTA SECTION (Exact Template Match) ===== */
+    .sg-cta-section {
+      position: relative;
+      width: 100%;
+      min-height: 760px;
+      display: flex;
+      align-items: center;
+      padding: 80px 24px;
+      background: #2b180a;
+      overflow: hidden;
+    }
+    .sg-cta-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .sg-cta-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1220px;
+      margin: 0 auto;
+    }
+    .sg-cta-card {
+      width: 100%;
+      max-width: 560px;
+      background: rgba(80, 48, 17, 0.72);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 48px 40px;
+      color: var(--cream-white);
+    }
+    .sg-cta-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 3.8vw, 48px);
+      font-weight: 400;
+      line-height: 1.15;
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+    .sg-cta-sub {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+      color: rgba(255, 249, 242, 0.85);
+      margin-bottom: 28px;
+    }
+    .sg-form-group {
+      margin-bottom: 18px;
+    }
+    .sg-form-label {
+      display: block;
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: rgba(255, 249, 242, 0.85);
+      margin-bottom: 6px;
+    }
+    .sg-form-input,
+    .sg-form-select,
+    .sg-form-textarea {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 249, 242, 0.3);
+      padding: 10px 0;
+      color: #ffffff;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.25s ease;
+    }
+    .sg-form-input::placeholder,
+    .sg-form-textarea::placeholder {
+      color: rgba(255, 249, 242, 0.45);
+    }
+    .sg-form-input:focus,
+    .sg-form-select:focus,
+    .sg-form-textarea:focus {
+      border-bottom-color: var(--accent-gold);
+    }
+    .sg-form-select option {
+      background: rgb(66, 39, 13);
+      color: #ffffff;
+    }
+    .sg-form-submit {
+      width: 100%;
+      height: 44px;
+      margin-top: 14px;
+      background: rgb(51, 51, 51);
+      color: #ffffff;
+      border: none;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.25s ease;
+    }
+    .sg-form-submit:hover {
+      background: var(--accent-gold);
+      color: rgb(36, 26, 16);
+    }
+
+    /* ===== FAQ ACCORDION SECTION (Exact Template Match) ===== */
+    .sg-faq-section {
+      padding: 110px 24px;
+      max-width: 1220px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .sg-faq-left h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 4.2vw, 56px);
+      font-weight: 400;
+      line-height: 1.12;
+      color: var(--text-bronze);
+      margin-bottom: 16px;
+    }
+    .sg-faq-left p {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      max-width: 440px;
+    }
+    .sg-faq-photo {
+      width: 100%;
+      max-width: 500px;
+      height: 326px;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+    .sg-faq-right {
+      padding-top: 24px;
+    }
+    .sg-faq-item {
+      border-bottom: 1.5px solid rgb(94, 62, 32);
+    }
+    .sg-faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 26px 0;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-align: left;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text-bronze);
+    }
+    .sg-faq-chevron {
+      display: inline-flex;
+      transition: transform 0.3s cubic-bezier(0.44, 0, 0.56, 1);
+    }
+    .sg-faq-item.is-open .sg-faq-chevron {
+      transform: rotate(90deg);
+    }
+    .sg-faq-a-wrap {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.38s cubic-bezier(0.44, 0, 0.56, 1);
+    }
+    .sg-faq-item.is-open .sg-faq-a-wrap {
+      max-height: 260px;
+    }
+    .sg-faq-a {
+      padding: 0 0 24px 28px;
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text-dark);
+    }
+
+    /* ===== FOOTER (Exact Template Match) ===== */
+    .sg-footer {
+      position: relative;
+      background: #1a0f07;
+      color: var(--cream-white);
+      padding: 90px 24px 40px;
+      overflow: hidden;
+    }
+    .sg-footer-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.42;
+    }
+    .sg-footer-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .sg-footer-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 64px;
+      border-bottom: 1px solid rgba(255, 249, 242, 0.14);
+    }
+    .sg-footer-col-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+      border-right: 1px solid rgba(255, 249, 242, 0.14);
+      padding-right: 32px;
+    }
+    .sg-footer-icon {
+      width: 40px;
+      height: 44px;
+    }
+    .sg-footer-desc {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255, 249, 242, 0.82);
+      max-width: 300px;
+    }
+    .sg-footer-contact {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--cream-white);
+    }
+    .sg-footer-copy {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: rgba(255, 249, 242, 0.65);
+    }
+    .sg-footer-col-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      border-right: 1px solid rgba(255, 249, 242, 0.14);
+    }
+    .sg-footer-nav-link {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--cream-white);
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+    .sg-footer-nav-link:hover {
+      color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+    .sg-footer-col-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    .sg-footer-social {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cream-white);
+      transition: color 0.25s ease, padding-right 0.25s ease;
+    }
+    .sg-footer-social:hover {
+      color: var(--accent-gold);
+      padding-right: 8px;
+    }
+    .sg-footer-wordmark {
+      width: 100%;
+      padding-top: 48px;
+      display: flex;
+      justify-content: center;
+    }
+    .sg-footer-wordmark img {
+      width: 100%;
+      max-width: 1240px;
+      height: auto;
+      display: block;
+    }
+
+    /* Scroll Reveal Animation */
+    .reveal-up {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive Tablet & Mobile */
+    @media (max-width: 1199px) {
+      .sg-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .sg-detail-row,
+      .sg-detail-row--reverse {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding: 36px 28px;
+      }
+      .sg-detail-row--reverse .sg-detail-text {
+        order: 1;
+      }
+      .sg-detail-row--reverse .sg-detail-media {
+        order: 2;
+      }
+      .sg-faq-section {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+    @media (max-width: 809px) {
+      .sg-hero {
+        min-height: 720px;
+        padding: 110px 20px 64px;
+      }
+      .sg-hero-badge {
+        align-self: flex-start;
+      }
+      .sg-hero-eyebrow {
+        letter-spacing: 0.45em;
+      }
+      .sg-services-grid {
+        grid-template-columns: 1fr;
+      }
+      .sg-services-intro {
+        min-height: auto;
+        padding: 44px 24px;
+      }
+      .sg-scard {
+        height: 420px;
+      }
+      .sg-scard .sg-scard-details {
+        max-height: 300px;
+        opacity: 1;
+        margin-top: 16px;
+      }
+      .sg-scard .sg-scard-hover-glass {
+        opacity: 0.45;
+      }
+      .sg-stat-divider {
+        display: none;
+      }
+      .sg-stats-row {
+        flex-direction: column;
+      }
+      .sg-footer-top {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .sg-footer-col-left,
+      .sg-footer-col-center,
+      .sg-footer-col-right {
+        border-right: none;
+        padding-right: 0;
+        align-items: center;
+      }
+      .sg-menu-bottom {
+        position: static;
+        margin-top: 36px;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="sg-header">
+    <div class="sg-header-inner">
+      <a href="/" class="sg-logo-link" aria-label="Seasonal Glo' Home">
+        <img src="/assets/images/header-logo.svg" alt="Seasonal Glo'" />
+      </a>
+      <button class="sg-menu-btn" id="sgMenuBtn" type="button" aria-label="Toggle Menu">
+        <span>Menu</span>
+        <span class="sg-menu-icon"><span></span><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- FULLSCREEN MENU OVERLAY -->
+  <div class="sg-menu-overlay" id="sgMenuOverlay">
+    <nav class="sg-menu-links" aria-label="Primary Navigation">
+      <a href="/#about" class="sg-menu-link">About</a>
+      <a href="/#services" class="sg-menu-link">Service</a>
+      <a href="/#team" class="sg-menu-link">Team</a>
+      <a href="/contact" class="sg-menu-link ">Contact</a>
+    </nav>
+    <div class="sg-menu-sublinks">
+      <a href="/" class="">Home</a>
+      <a href="/facials" class="">Facials</a>
+      <a href="/massage" class="">Massage</a>
+      <a href="/waxing" class="">Waxing</a>
+      <a href="/eyelashes" class="is-active">Shop Premium Eyelashes</a>
+      <a href="/contact" class="">Contact</a>
+    </div>
+    <div class="sg-menu-bottom">
+      <span>+44 7399 156171</span>
+      <span>info@seasonalgloltd.com</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="sg-hero">
+    <img src="https://framerusercontent.com/images/mgLkGijwZYaJhAOK1XhennzsRUU.png?width=1562&height=1270" alt="Seasonal Glo' Birmingham Sanctuary" class="sg-hero-bg" />
+    <div class="sg-hero-overlay"></div>
+    <div class="sg-hero-container">
+      <div class="sg-hero-badge">
+        <div class="sg-hero-avatars">
+          <img src="https://framerusercontent.com/images/LaRDfktiTYtkQicxgYny45QbNE.jpg?width=3638&height=5457" alt="Seasonal Glo' Guest" />
+          <img src="https://framerusercontent.com/images/1Te3AVoHmXTegMVNAEVG1uAQak.jpg?width=3648&height=4841" alt="Seasonal Glo' Guest" />
+        </div>
+        <div>
+          <div class="sg-hero-badge-num">2000+</div>
+          <div class="sg-hero-badge-label">clients glowing &amp; refreshed</div>
+        </div>
+      </div>
+      <div class="sg-hero-content">
+        <p class="sg-hero-eyebrow">VOLUME, LENGTH & GLAMOUR</p>
+        <h1 class="sg-hero-title">Premium Eyelashes<br />& Flawless Makeup.</h1>
+        <p class="sg-hero-sub">Enhance your beauty with our premium eyelashes at Seasonal Glo’. Our luxurious lash range adds volume, length and glamour, using high-quality fibres to accentuate your eyes effortlessly for any occasion. Pair with our Seasonal Glo' Transformation Makeup services, where our talented artists create stunning looks using top-quality products to highlight your best features.</p>
+        <div class="sg-hero-btns">
+          <a href="https://www.fresha.com/book-now/seasonal-glo-ltd-y0n2dxef/all-offer?share=true&pId=810559" class="sg-btn sg-btn--white" target="_blank">BOOK MAKEUP / LASHES</a>
+          <a href="#treatments" class="sg-btn sg-btn--outline">BROWSE LASH COLLECTION</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATEMENT / WHY CHOOSE US -->
+  <section class="sg-statement">
+    <p class="sg-eyebrow reveal-up">25+ LUXURY LASH STYLES IN STOCK</p>
+    <h2 class="sg-statement-title reveal-up">From everyday 15mm wisps to bold 25mm drama, vibrant colour blends, and DIY cluster kits crafted from high-quality fibres.</h2>
+    <div class="sg-pill-trio reveal-up">
+      <img src="https://framerusercontent.com/images/h7Ra51HOBh91QHfV4xcukwbjvI.jpg?width=1200&height=2133" alt="Seasonal Glo' Treatment" />
+      <img src="https://framerusercontent.com/images/OYqrhgXhLBtd39AD7tlPC5ShJvY.jpg?width=736&height=981" alt="Seasonal Glo' Sanctuary" />
+      <img src="https://framerusercontent.com/images/Q2aazBpgyQi6xleHMmhnHT3j5yQ.jpg?width=768&height=1376" alt="Seasonal Glo' Care" />
+    </div>
+    <div class="sg-stats-row">
+      
+        <div class="sg-stat-item reveal-up">
+          <div class="sg-stat-number">£10</div>
+          <p class="sg-stat-label">15mm Premium Strip Lashes</p>
+          <div class="sg-stat-dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="sg-stat-divider"></div>
+        
+        <div class="sg-stat-item reveal-up">
+          <div class="sg-stat-number">£15</div>
+          <p class="sg-stat-label">20mm–25mm & Colourful Lashes</p>
+          <div class="sg-stat-dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="sg-stat-divider"></div>
+        
+        <div class="sg-stat-item reveal-up">
+          <div class="sg-stat-number">25+</div>
+          <p class="sg-stat-label">Signature Lash Styles & Kits</p>
+          <div class="sg-stat-dots"><span></span><span></span><span></span></div>
+        </div>
+        
+        
+    </div>
+  </section>
+
+  <!-- DETAILED CUSTOMER COPY SECTIONS -->
+  <section class="sg-details-section" id="treatments">
+    <img src="https://framerusercontent.com/images/oxdO6YakGwuarKwdiFvb42yIsZw.png?width=639&height=919" alt="" class="sg-leaf-deco sg-leaf-deco--left" />
+    <img src="https://framerusercontent.com/images/qz0UVvAJYJ9eBgUJajeVroZjDk.png?width=320&height=460" alt="" class="sg-leaf-deco sg-leaf-deco--right" />
+    <div class="sg-section-header reveal-up">
+      <p class="sg-eyebrow">SEASONAL GLO' EYELASHES COLLECTION</p>
+      <h2 class="sg-section-h2">High-Quality Fibres Designed To<br />Accentuate Your Eyes Effortlessly.</h2>
+      <p class="sg-section-sub">Explore our complete collection of 15mm everyday classics, 20mm–25mm full glamour strip lashes, statement colour blends, DIY cluster kits, and professional makeup artistry.</p>
+    </div>
+    
+        <div class="sg-detail-row  reveal-up">
+          <div class="sg-detail-text">
+            <p class="sg-eyebrow sg-eyebrow--left">FROM £10.00 GBP • 10 SIGNATURE STYLES</p>
+            <h3 class="sg-detail-title">15mm Natural & Everyday Strip Lashes</h3>
+            <p class="sg-detail-p">Crafted for effortless everyday elegance, featherlight comfort, and soft definition, our 15mm Premium Strip Lashes accentuate your natural eye shape from morning meetings to evening dinners.</p><p class="sg-detail-p">Available Styles (£10.00 GBP each): Hybrid Hottie (15mm), Soft Life (15mm), Intrinsic Beauty (15mm), Cat Eyes (15mm), Baby Girl (15mm), Short 'N' Fluffy (15mm), Bad-D-Curl (15mm), Baby Fuzz (15mm), Discrete and Chic (15mm), and Realist (15mm).</p>
+            <div class="sg-credentials-list">
+              <div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Hybrid Hottie, Soft Life, Intrinsic Beauty & Cat Eyes (15mm — £10)</span></div><div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Baby Girl, Short 'N' Fluffy, Bad-D-Curl & Baby Fuzz (15mm — £10)</span></div><div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Discrete and Chic & Realist (15mm — £10)</span></div>
+            </div>
+            <div class="sg-detail-actions">
+              <a href="#cta" class="sg-btn sg-btn--brown" >ENQUIRE / ORDER 15MM LASHES</a>
+            </div>
+          </div>
+          <div class="sg-detail-media">
+            <div class="sg-detail-frame">
+              <img src="https://framerusercontent.com/images/8rrXitooQkJrGHOBVwel01xdX4.png?width=843&height=1264" alt="15mm Natural & Everyday Strip Lashes" />
+              <div class="sg-detail-card-caption">1. 15mm Natural & Everyday Strip Lashes</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="sg-detail-row sg-detail-row--reverse reveal-up">
+          <div class="sg-detail-text">
+            <p class="sg-eyebrow sg-eyebrow--left">FROM £15.00 GBP • 10 FULL-GLAMOUR STYLES</p>
+            <h3 class="sg-detail-title">20mm & 25mm Statement Strip Lashes</h3>
+            <p class="sg-detail-p">Turn heads with our 20mm and 25mm Premium Strip Lashes, engineered with multi-dimensional curl, plush density, and flexible bands for unforgettable volume and red-carpet drama.</p><p class="sg-detail-p">20mm Collection (£15.00 GBP): Brunch Babe, Rare Risk, Trouble, Bad-D-Curl XL, and Russian Roulette. 25mm Collection (£15.00 GBP): Voluminous, Theatrical, A Statement, Sensational, and Unforgettable.</p>
+            <div class="sg-credentials-list">
+              <div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>20mm Classics (£15): Brunch Babe, Rare Risk, Trouble, Bad-D-Curl XL & Russian Roulette</span></div><div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>25mm Drama (£15): Voluminous, Theatrical, A Statement, Sensational & Unforgettable</span></div><div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Reusable High-Quality Fibres with Seamless Comfort Bands</span></div>
+            </div>
+            <div class="sg-detail-actions">
+              <a href="#cta" class="sg-btn sg-btn--brown" >ENQUIRE / ORDER 20MM–25MM LASHES</a>
+            </div>
+          </div>
+          <div class="sg-detail-media">
+            <div class="sg-detail-frame">
+              <img src="https://framerusercontent.com/images/9jI0fDURqKKe13CktTXdDdTITI.png?width=843&height=1264" alt="20mm & 25mm Statement Strip Lashes" />
+              <div class="sg-detail-card-caption">2. 20mm & 25mm Statement Strip Lashes</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="sg-detail-row  reveal-up">
+          <div class="sg-detail-text">
+            <p class="sg-eyebrow sg-eyebrow--left">FROM £15.00 GBP • COLOURFUL LASHES & DIY CLUSTER KITS</p>
+            <h3 class="sg-detail-title">Colourful Lashes & DIY Cluster Kits (8mm–16mm)</h3>
+            <p class="sg-detail-p">Express your signature style with our Colourful Strip Lashes (£15.00 GBP), blending rich jet-black roots with striking pops of colour: On Wednesdays (Pink & Black 20mm), The Grinch (Black & Green 20mm), Red Velvet (Red & Black 20mm), Midnight Whisper (Black & Blue 20mm), and Purple Rain (Purple & Black 25mm).</p><p class="sg-detail-p">Prefer salon-customisable clusters at home? Explore our Soft Serenity Premium DIY Cluster Lash Kit (8mm–16mm), Vivid Volume Premium DIY Cluster Lash Kit (8mm–16mm), and precision Eyelash Tool Kit.</p>
+            <div class="sg-credentials-list">
+              <div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Colourful 20mm–25mm (£15): On Wednesdays, The Grinch, Red Velvet, Midnight Whisper & Purple Rain</span></div><div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>DIY Cluster Kits (8mm–16mm): Soft Serenity & Vivid Volume Kits</span></div><div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Complete with Seasonal Glo' Precision Eyelash Tool Kit</span></div>
+            </div>
+            <div class="sg-detail-actions">
+              <a href="#cta" class="sg-btn sg-btn--brown" >ORDER COLOURFUL & DIY KITS</a>
+            </div>
+          </div>
+          <div class="sg-detail-media">
+            <div class="sg-detail-frame">
+              <img src="https://framerusercontent.com/images/DepAamThLuGDkXGlrVsKZxRCwY.png?width=843&height=1264" alt="Colourful Lashes & DIY Cluster Kits (8mm–16mm)" />
+              <div class="sg-detail-card-caption">3. Colourful Lashes & DIY Cluster Kits (8mm–16mm)</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="sg-detail-row sg-detail-row--reverse reveal-up">
+          <div class="sg-detail-text">
+            <p class="sg-eyebrow sg-eyebrow--left">SEASONAL GLO' TRANSFORMATION</p>
+            <h3 class="sg-detail-title">Professional Makeup Services</h3>
+            <p class="sg-detail-p">Enhance your beauty with our professional makeup services at Seasonal Glo’. Our talented artists create stunning looks for any occasion, using top-quality products to highlight your best features.</p><p class="sg-detail-p">Whether you are preparing for a birthday celebration, bridal party, photoshoot, or special evening out in Birmingham, every makeup appointment includes skin-first luxury prep and your choice of Seasonal Glo' premium lashes.</p>
+            <div class="sg-credentials-list">
+              <div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Bespoke Soft Glam, Full Glam & Bridal Occasion Makeup</span></div><div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Skin-First Luxury Prep Using High-Grade Products</span></div><div class="sg-credential-row"><span class="sg-leaf-bullet">✦</span><span>Paired with Seasonal Glo' 15mm–25mm Premium Strip or Cluster Lashes</span></div>
+            </div>
+            <div class="sg-detail-actions">
+              <a href="https://www.fresha.com/book-now/seasonal-glo-ltd-y0n2dxef/all-offer?share=true&pId=810559" class="sg-btn sg-btn--brown" target="_blank">BOOK MAKEUP APPOINTMENT</a>
+            </div>
+          </div>
+          <div class="sg-detail-media">
+            <div class="sg-detail-frame">
+              <img src="https://framerusercontent.com/images/obfEPTaBQRFRG6nRLHE8Sz5qUk.png?width=735&height=1103" alt="Professional Makeup Services" />
+              <div class="sg-detail-card-caption">4. Professional Makeup Services</div>
+            </div>
+          </div>
+        </div>
+        
+  </section>
+
+  
+
+  <!-- 3x2 SIGNATURE EXPERIENCES GRID -->
+  <section class="sg-services-grid" id="services">
+    <div class="sg-services-intro">
+      <h2>Lash & Glam Range</h2>
+      <p>Explore our 15mm, 20mm, 25mm, colourful, and DIY cluster lash collections alongside professional makeup.</p>
+    </div>
+    
+        <a href="#cta" class="sg-scard">
+          <img src="https://framerusercontent.com/images/8rrXitooQkJrGHOBVwel01xdX4.png?width=843&height=1264" alt="15mm Strip Lashes" class="sg-scard-bg" loading="lazy" />
+          <div class="sg-scard-gradient"></div>
+          <div class="sg-scard-hover-glass"></div>
+          <div class="sg-scard-inner">
+            <h3 class="sg-scard-title">15mm Strip Lashes</h3>
+            <div class="sg-scard-details">
+              <div class="sg-scard-points">
+                <div class="sg-scard-point"><p>Hybrid Hottie & Soft Life</p></div><div class="sg-scard-point"><p>Cat Eyes & Intrinsic Beauty</p></div><div class="sg-scard-point"><p>Short 'N' Fluffy & Realist</p></div><div class="sg-scard-point"><p>Discrete & Chic everyday wear</p></div>
+              </div>
+              <div class="sg-scard-price-row">
+                <span class="sg-scard-total">Total:</span>
+                <div class="sg-scard-price-val">
+                  <span class="sg-scard-curr">£</span>
+                  <span class="sg-scard-num">10</span>
+                  <span class="sg-scard-dec">.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        
+        <a href="#cta" class="sg-scard">
+          <img src="https://framerusercontent.com/images/9jI0fDURqKKe13CktTXdDdTITI.png?width=843&height=1264" alt="20mm Strip Lashes" class="sg-scard-bg" loading="lazy" />
+          <div class="sg-scard-gradient"></div>
+          <div class="sg-scard-hover-glass"></div>
+          <div class="sg-scard-inner">
+            <h3 class="sg-scard-title">20mm Strip Lashes</h3>
+            <div class="sg-scard-details">
+              <div class="sg-scard-points">
+                <div class="sg-scard-point"><p>Brunch Babe & Rare Risk</p></div><div class="sg-scard-point"><p>Trouble & Bad-D-Curl XL</p></div><div class="sg-scard-point"><p>Russian Roulette volume</p></div><div class="sg-scard-point"><p>Lightweight flexible band</p></div>
+              </div>
+              <div class="sg-scard-price-row">
+                <span class="sg-scard-total">Total:</span>
+                <div class="sg-scard-price-val">
+                  <span class="sg-scard-curr">£</span>
+                  <span class="sg-scard-num">15</span>
+                  <span class="sg-scard-dec">.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        
+        <a href="#cta" class="sg-scard">
+          <img src="https://framerusercontent.com/images/DepAamThLuGDkXGlrVsKZxRCwY.png?width=843&height=1264" alt="25mm Strip Lashes" class="sg-scard-bg" loading="lazy" />
+          <div class="sg-scard-gradient"></div>
+          <div class="sg-scard-hover-glass"></div>
+          <div class="sg-scard-inner">
+            <h3 class="sg-scard-title">25mm Strip Lashes</h3>
+            <div class="sg-scard-details">
+              <div class="sg-scard-points">
+                <div class="sg-scard-point"><p>Voluminous & Theatrical</p></div><div class="sg-scard-point"><p>A Statement & Sensational</p></div><div class="sg-scard-point"><p>Unforgettable full drama</p></div><div class="sg-scard-point"><p>High-quality reusable fibres</p></div>
+              </div>
+              <div class="sg-scard-price-row">
+                <span class="sg-scard-total">Total:</span>
+                <div class="sg-scard-price-val">
+                  <span class="sg-scard-curr">£</span>
+                  <span class="sg-scard-num">15</span>
+                  <span class="sg-scard-dec">.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        
+        <a href="#cta" class="sg-scard">
+          <img src="https://framerusercontent.com/images/DYH2EVLhRPGydeaF5sVZVxoD4SM.jpg?width=1080&height=1350" alt="Colourful Lashes" class="sg-scard-bg" loading="lazy" />
+          <div class="sg-scard-gradient"></div>
+          <div class="sg-scard-hover-glass"></div>
+          <div class="sg-scard-inner">
+            <h3 class="sg-scard-title">Colourful Lashes</h3>
+            <div class="sg-scard-details">
+              <div class="sg-scard-points">
+                <div class="sg-scard-point"><p>On Wednesdays (Pink/Black)</p></div><div class="sg-scard-point"><p>Midnight Whisper (Blue/Black)</p></div><div class="sg-scard-point"><p>Red Velvet & The Grinch</p></div><div class="sg-scard-point"><p>Purple Rain (Purple/Black 25mm)</p></div>
+              </div>
+              <div class="sg-scard-price-row">
+                <span class="sg-scard-total">Total:</span>
+                <div class="sg-scard-price-val">
+                  <span class="sg-scard-curr">£</span>
+                  <span class="sg-scard-num">15</span>
+                  <span class="sg-scard-dec">.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        
+        <a href="#cta" class="sg-scard">
+          <img src="https://framerusercontent.com/images/obfEPTaBQRFRG6nRLHE8Sz5qUk.png?width=735&height=1103" alt="DIY Cluster Kits" class="sg-scard-bg" loading="lazy" />
+          <div class="sg-scard-gradient"></div>
+          <div class="sg-scard-hover-glass"></div>
+          <div class="sg-scard-inner">
+            <h3 class="sg-scard-title">DIY Cluster Kits</h3>
+            <div class="sg-scard-details">
+              <div class="sg-scard-points">
+                <div class="sg-scard-point"><p>Soft Serenity (8mm–16mm)</p></div><div class="sg-scard-point"><p>Vivid Volume (8mm–16mm)</p></div><div class="sg-scard-point"><p>Customisable lash mapping</p></div><div class="sg-scard-point"><p>Eyelash Tool Kit available</p></div>
+              </div>
+              <div class="sg-scard-price-row">
+                <span class="sg-scard-total">Total:</span>
+                <div class="sg-scard-price-val">
+                  <span class="sg-scard-curr">£</span>
+                  <span class="sg-scard-num">25</span>
+                  <span class="sg-scard-dec">.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        
+  </section>
+
+  <!-- BOOKING CTA SECTION -->
+  <section class="sg-cta-section" id="cta">
+    <img src="https://framerusercontent.com/images/mGhGb2FUId1x1vbFnUgRhpiSpl8.png?width=1663&height=1319" alt="Book Your Seasonal Glo' Experience" class="sg-cta-bg" />
+    <div class="sg-cta-container">
+      <div class="sg-cta-card reveal-up">
+        <h2 class="sg-cta-title">Book Your<br />Seasonal Glo'<br />Spa Sanctuary</h2>
+        <p class="sg-cta-sub">Pause, breathe, and choose yourself again at our Harborne, Birmingham sanctuary.</p>
+        <form class="sg-booking-form">
+          <div class="sg-form-group">
+            <label class="sg-form-label">Name</label>
+            <input type="text" class="sg-form-input" placeholder="Jane Smith" required />
+          </div>
+          <div class="sg-form-group">
+            <label class="sg-form-label">Email *</label>
+            <input type="email" class="sg-form-input" placeholder="jane@seasonalgloltd.com" required />
+          </div>
+          <div class="sg-form-group">
+            <label class="sg-form-label">Phone Number</label>
+            <input type="tel" class="sg-form-input" placeholder="07399 156171" />
+          </div>
+          <div class="sg-form-group">
+            <label class="sg-form-label">Service</label>
+            <select class="sg-form-select" required>
+              <option value="" disabled selected>Select Service</option>
+              <option value="Facials">Deluxe &amp; Medical-Grade Facials (From £45)</option>
+              <option value="Massage">Luxury Massages (From £30)</option>
+              <option value="Waxing">Smooth Intimate &amp; Body Waxing (From £30)</option>
+              <option value="Makeup">Flawless Transformation Makeup</option>
+              <option value="Eyelashes">Premium Eyelashes Collection (From £10)</option>
+              <option value="Couples">Join The Couples Massage Waitlist</option>
+            </select>
+          </div>
+          <div class="sg-form-group">
+            <label class="sg-form-label">Comment</label>
+            <input type="text" class="sg-form-input" placeholder="Preferred date, add-ons, or questions..." />
+          </div>
+          <button type="submit" class="sg-form-submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ ACCORDION SECTION -->
+  <section class="sg-faq-section">
+    <div class="sg-faq-left reveal-up">
+      <h2>Everything You<br />Need to Know.</h2>
+      <p>Feel good, live good, and look good at Seasonal Glo' — 10 Hampton Court Road, Harborne, Birmingham.</p>
+      <img src="https://framerusercontent.com/images/nUnGtAEPfgxjT0fwFbzQrqnUyz0.png?width=736&height=736" alt="Seasonal Glo' Guest" class="sg-faq-photo" loading="lazy" />
+    </div>
+    <div class="sg-faq-right reveal-up">
+      
+        <div class="sg-faq-item is-open">
+          <button class="sg-faq-q" type="button" aria-expanded="true">
+            <span class="sg-faq-chevron">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4.5 2.5L9.5 7L4.5 11.5" stroke="#8B5524" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="sg-faq-q-text">What lengths do your Premium Strip Lashes come in?</span>
+          </button>
+          <div class="sg-faq-a-wrap">
+            <p class="sg-faq-a">Our collection includes 15mm everyday strip lashes (£10.00), 20mm medium-glam strip lashes (£15.00), and 25mm maximum-volume statement lashes (£15.00).</p>
+          </div>
+        </div>
+        
+        <div class="sg-faq-item ">
+          <button class="sg-faq-q" type="button" aria-expanded="false">
+            <span class="sg-faq-chevron">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4.5 2.5L9.5 7L4.5 11.5" stroke="#8B5524" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="sg-faq-q-text">What comes in the DIY Cluster Lash Kits?</span>
+          </button>
+          <div class="sg-faq-a-wrap">
+            <p class="sg-faq-a">Our Soft Serenity and Vivid Volume Premium DIY Cluster Lash Kits include customizable 8mm to 16mm lash clusters so you can map your ideal eye shape at home, and can be paired with our Eyelash Tool Kit.</p>
+          </div>
+        </div>
+        
+        <div class="sg-faq-item ">
+          <button class="sg-faq-q" type="button" aria-expanded="false">
+            <span class="sg-faq-chevron">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4.5 2.5L9.5 7L4.5 11.5" stroke="#8B5524" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="sg-faq-q-text">Do you offer professional makeup application in Birmingham?</span>
+          </button>
+          <div class="sg-faq-a-wrap">
+            <p class="sg-faq-a">Yes! Our Seasonal Glo' Transformation Makeup service in Harborne creates bespoke looks for any occasion using top-quality products and our signature eyelashes.</p>
+          </div>
+        </div>
+        
+        <div class="sg-faq-item ">
+          <button class="sg-faq-q" type="button" aria-expanded="false">
+            <span class="sg-faq-chevron">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4.5 2.5L9.5 7L4.5 11.5" stroke="#8B5524" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="sg-faq-q-text">Are your strip lashes reusable?</span>
+          </button>
+          <div class="sg-faq-a-wrap">
+            <p class="sg-faq-a">Yes, all of our 15mm, 20mm, 25mm, and Colourful Strip Lashes are crafted from high-quality fibres designed to be gently cleaned and reused across multiple wears.</p>
+          </div>
+        </div>
+        
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="sg-footer">
+    <img src="https://framerusercontent.com/images/mgLkGijwZYaJhAOK1XhennzsRUU.png?width=1562&height=1270" alt="" class="sg-footer-bg" />
+    <div class="sg-footer-inner">
+      <div class="sg-footer-top">
+        <div class="sg-footer-col-left">
+          <img src="/assets/images/footer-icon.svg" alt="Seasonal Glo'" class="sg-footer-icon" />
+          <p class="sg-footer-desc">Your Harborne, Birmingham sanctuary to feel good, live good, and look good daily.</p>
+          <div class="sg-footer-contact">
+            <div>10 Hampton Court Road, Harborne, Birmingham, B17 9AE</div>
+            <div>+44 7399 156171</div>
+            <div>info@seasonalgloltd.com</div>
+          </div>
+          <p class="sg-footer-copy">© 2026 Seasonal Glo'. All Rights Reserved.</p>
+        </div>
+        <div class="sg-footer-col-center">
+          <a href="/" class="sg-footer-nav-link">Home</a>
+          <a href="/facials" class="sg-footer-nav-link">Facials</a>
+          <a href="/massage" class="sg-footer-nav-link">Massage</a>
+          <a href="/waxing" class="sg-footer-nav-link">Waxing</a>
+          <a href="/eyelashes" class="sg-footer-nav-link">Eyelashes</a>
+          <a href="/contact" class="sg-footer-nav-link">Contact</a>
+        </div>
+        <div class="sg-footer-col-right">
+          <a href="https://www.fresha.com/book-now/seasonal-glo-ltd-y0n2dxef/all-offer?share=true&pId=810559" target="_blank" class="sg-footer-social">BOOK ON FRESHA</a>
+          <a href="https://www.instagram.com/seasonalgloltd" target="_blank" class="sg-footer-social">INSTAGRAM</a>
+          <a href="/eyelashes" class="sg-footer-social">SHOP EYELASHES</a>
+        </div>
+      </div>
+      <div class="sg-footer-wordmark">
+        <img src="/assets/images/footer-logo.svg" alt="Seasonal Glo'" />
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Menu Toggle
+      const menuBtn = document.getElementById("sgMenuBtn");
+      const menuOverlay = document.getElementById("sgMenuOverlay");
+      if (menuBtn && menuOverlay) {
+        menuBtn.addEventListener("click", () => {
+          const open = menuOverlay.classList.toggle("is-open");
+          menuBtn.classList.toggle("is-open", open);
+        });
+        menuOverlay.querySelectorAll("a").forEach(a => {
+          a.addEventListener("click", () => {
+            menuOverlay.classList.remove("is-open");
+            menuBtn.classList.remove("is-open");
+          });
+        });
+      }
+
+      // FAQ Accordion
+      document.querySelectorAll(".sg-faq-q").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const item = btn.closest(".sg-faq-item");
+          const isOpen = item.classList.toggle("is-open");
+          btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+      });
+
+      // Scroll Reveal Observer
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll(".reveal-up").forEach(el => observer.observe(el));
+
+      // Form Handling
+      document.querySelectorAll("form").forEach(form => {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const btn = form.querySelector("button[type='submit']");
+          if (btn) {
+            btn.textContent = "Thank you — Redirecting to Fresha...";
+          }
+          setTimeout(() => {
+            window.open("https://www.fresha.com/book-now/seasonal-glo-ltd-y0n2dxef/all-offer?share=true&pId=810559", "_blank");
+          }, 800);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

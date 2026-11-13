@@ -1,0 +1,11 @@
+{
+  "name": "seasonal-glo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Seasonal Glo' luxury wellness and beauty sanctuary website recreated from the LuxySpa Framer template",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  }
+}
